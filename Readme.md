@@ -1,5 +1,17 @@
 # Coupon-Box PHP service
 
+### Solution
+
+- The solution is self-contained and implemented in the [coupon-box](./coupons-box) folder.
+
+- It ties with the Laravel framework through the [routing file](./routes/web.php) which calls [CouponsController.php](./app/Http/Controllers/CouponsController.php)
+
+- Dependency Injection file is done through [CouponsBoxProvider.php](./app/Providers/CouponsBoxProvider.php) to inject a concrete Guzzle Client wherever needed.
+
+- Unit testing is in [ForwardCouponRequest.php](./tests/Feature/ForwardCouponRequestTest.php).
+
+- API testing is in  [ApiGetCouponTest.php](./tests/Feature/ApiGetCouponTest.php).
+
 ### Description
 
 This service accepts a GET request from a client, forwards it to a remote Go Coupon service and sends back the response to the client in a synchronous fashion without any alterations, decorations, filtering.
@@ -10,7 +22,11 @@ Part of the microservices suite for the Coupon Box project
 
 ### Dependencies
 
-Needs the exact URL and port of the remote Go Coupon service
+Needs the exact URL and port of the remote Go Coupon service.
+
+- Guzzle
+- PHPunit
+- Mockery
 
 ### Installation
 
